@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hannes Dahlvik - Portfolio</title>
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/7ae9d079ef.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="welcome-section">
+            <div></div>
+            <div class="title-wrapper">
+                <h2>Hey I'm</h2>
+                <h1>Hannes Dahlvik</h1>
+                <h2>I'm a <span style="color: #30d1e3;">junior</span> web developer</h2>
+            </div>
+            <div></div>
+            <div class="skewed"></div>
+        </div>
+
+        <div class="about-section">
+            <div class="about-inner-section">
+                <div>
+                    <h3>About me</h3>
+                    <div class="line"></div>
+                    <p id="about-me-text"></p>
+                </div>
+                <div class="links">
+                    <a href="https://github.com/HannesDahlvik" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hannes-dahlvik-446958181/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ability-cards-section">
+            <div class="ability-card">
+                <div class="ability-card-top">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Front end development</h4>
+                </div>
+                <div class="ability-card-content">
+                    <ul>
+                        <li>React</li>
+                        <li>Angular</li>
+                        <li>Parcel</li>
+                        <li>Sass</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ability-card">
+                <div class="ability-card-top">
+                    <i class="fas fa-server"></i>
+                    <h4>Back end development</h4>
+                </div>
+                <div class="ability-card-content">
+                    <ul>
+                        <li>Express</li>
+                        <li>GraphQL</li>
+                        <li>Firebase</li>
+                        <li>Socket.io</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ability-card">
+                <div class="ability-card-top">
+                    <i class="fas fa-tools"></i>
+                    <h4>Tools I use</h4>
+                </div>
+                <div class="ability-card-content">
+                    <ul>
+                        <li>VS Code</li>
+                        <li>Terminal</li>
+                        <li>Chrome</li>
+                        <li>Git(hub)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-section">
+            <h3>Projects</h3>
+            <div class="projects-wrapper">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="./images/sosdata.png">
+                    </div>
+                    <div class="card-overlay">
+                        <h4>SOS Data</h4>
+                        <p>I was there on an internship and me and my friend made a new website for him.</p>
+                        <a href="https://www.sosdata.fi/" target="_blank" class="btn">Learn more
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-front">
+                        <img src="./images/budget-planner.png">
+                    </div>
+                    <div class="card-overlay">
+                        <h4>Budget planner</h4>
+                        <p>My side project I've been working on.</p>
+                        <a href="https://github.com/HannesDahlvik/budget-planner-frontend" target="_blank"
+                            class="btn">Learn more
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <form action="https://formspree.io/hannes.dahlvik@gmail.com" method="POST">
+                <h3>Contact me</h3>
+                <div class="input-field">
+                    <input type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="input-field">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-field">
+                    <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                </div>
+                <button class="btn">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./ts/index.ts"></script>
+
+</body>
+
+</html>
