@@ -1,174 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hannes Dahlvik - Portfolio</title>
-
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        
-        
-      <script type="module" crossorigin src="/assets/index-e73ae3b2.js"></script>
-      <link rel="stylesheet" href="/assets/index-8abb9b2d.css">
+		<link href="./_app/immutable/assets/0.00902b34.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.219cf0c3.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.ce07a0f8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.848c25ba.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.c2d26620.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.db766c52.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.c1861289.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.e04f8ed5.js">
     </head>
+    <body
+        class="flex flex-col items-center bg-background text-foreground"
+        data-sveltekit-preload-data="hover"
+    >
+        <div style="display: contents">   
+			
+			<script>
+				{
+					__sveltekit_1lqllhu = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
 
-    <body>
-        <div class="view view__home">
-            <div class="view__home--blur-background"></div>
+					const element = document.currentScript.parentElement;
 
-            <div class="view__home--text center" data-aos="fade-up">
-                <h1 data-aos="fade-up">Hannes Dahlvik</h1>
-                <p data-aos="fade-up" data-aos-delay="750">Full Stack Web Developer</p>
-            </div>
+					const data = [null,null];
 
-            <div class="view__home--mouse-scroll">
-                <i class="ph-caret-down" id="scroll-button"></i>
-            </div>
-        </div>
-
-        <div class="view view__about center">
-            <h2>About me</h2>
-            <div class="divider"></div>
-            <p class="view__about--about-text">
-                Hey my name is Hannes Dahlvik I'm <span id="age">20</span> years old and I'm a full
-                stack web developer based in Vaasa, Finland currently studying information
-                technology at Novia University. I like to create fun web apps with cool technology.
-                In my free time I like to play video games, play guitar and hang out with friends.
-            </p>
-
-            <div class="view__about--links">
-                <a href="https://github.com/HannesDahlvik" target="_blank">
-                    <i class="devicon-github-original"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/hannes-dahlvik-446958181/" target="_blank">
-                    <i class="devicon-linkedin-plain"></i>
-                </a>
-            </div>
-
-            <div class="view__about--skills">
-                <div class="view__about--skill-card">
-                    <i class="ph-layout-fill"></i>
-                    <h4>Frontend</h4>
-
-                    <div class="view__about--skill-card--list">
-                        <p>React</p>
-                        <p>Svelte</p>
-                        <p>Vite</p>
-                        <p>TailwindCSS</p>
-                        <p>TypeScript</p>
-                    </div>
-                </div>
-                <div class="view__about--skill-card">
-                    <i class="ph-hard-drives-fill"></i>
-                    <h4>Backend</h4>
-
-                    <div class="view__about--skill-card--list">
-                        <p>Express</p>
-                        <p>tRPC</p>
-                        <p>PostgreSQL</p>
-                        <p>NodeJS</p>
-                        <p>TypeScript</p>
-                    </div>
-                </div>
-                <div class="view__about--skill-card">
-                    <i class="ph-wrench-fill"></i>
-                    <h4>Tools</h4>
-
-                    <div class="view__about--skill-card--list">
-                        <p>VS Code</p>
-                        <p>Terminal</p>
-                        <p>Git(hub)</p>
-                        <p>GitKraken</p>
-                        <p>Beekeeper Studio</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="view__about--bottom-blur"></div>
-        </div>
-
-        <div class="view__projects">
-            <div class="view__projects--title">
-                <h2>Projects</h2>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="view__projects--wrapper">
-                <div
-                    class="view__projects--project view__projects--project--default"
-                    data-aos="fade-up"
-                >
-                    <div class="view__projects--project--image">
-                        <a href="https://cinzal.com/" target="_blank">
-                            <img src="/imgs/cinzal.jpg" alt="Cinzal.com homepage" />
-                        </a>
-                    </div>
-
-                    <div class="view__projects--project--info">
-                        <h3>Cinzal</h3>
-                        <div class="view__projects--project--info-description">
-                            <p>
-                                An open source time-management and scheduling service, frontend
-                                hosted on
-                                <a href="https://www.netlify.com/" target="_blank">netlify</a> and
-                                backend hosted on a
-                                <a href="https://www.digitalocean.com/" target="_blank"
-                                    >digitalocean</a
-                                >
-                                droplet
-                            </p>
-                        </div>
-                        <ul class="view__projects--project--info-tech_list">
-                            <li>React</li>
-                            <li>TypeScript</li>
-                            <li>tRPC</li>
-                            <li>Prisma</li>
-                            <li>PostgreSQL</li>
-                        </ul>
-
-                        <div class="view__projects--project-links">
-                            <a href="https://github.com/HannesDahlvik/cinzal" target="_blank">
-                                <i class="devicon-github-original"></i>
-                            </a>
-                            <a href="https://cinzal.com" target="_blank">
-                                <i class="ph-arrow-square-out"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="view__contact">
-            <div class="view__contact--top-blur"></div>
-
-            <div class="view__contact--title">
-                <h2>Contact me</h2>
-            </div>
-
-            <div class="divider"></div>
-
-            <form action="https://formspree.io/hannes.dahlvik@gmail.com" method="post">
-                <div class="form-field">
-                    <label for="name">Name</label>
-                    <input type="text" name="Name" id="name" placeholder="Jon Doe" required />
-                </div>
-                <div class="form-field">
-                    <label for="message">Message</label>
-                    <textarea
-                        name="Message"
-                        id="message"
-                        cols="30"
-                        rows="10"
-                        placeholder="Love your work!"
-                        required
-                    ></textarea>
-                </div>
-                <button class="btn" type="submit">Send</button>
-            </form>
-        </div>
-
-        
+					Promise.all([
+						import("./_app/immutable/entry/start.219cf0c3.js"),
+						import("./_app/immutable/entry/app.c2d26620.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
     </body>
 </html>
