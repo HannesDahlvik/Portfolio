@@ -5,11 +5,14 @@
     import Card from '$lib/Card.svelte'
     import TechIcon from '$lib/TechIcon.svelte'
     import Project from '$lib/Project.svelte'
+    import Meteors from '$lib/Meteors.svelte'
 </script>
 
 <svelte:head>
     <title>Hannes Dahlvik - Portfolio</title>
 </svelte:head>
+
+<Meteors />
 
 <div class="w-11/12 sm:w-9/12 lg:w-8/12 pt-44 pb-4 sm:py-44">
     <div
@@ -62,27 +65,23 @@
                     <TechIcon icon="svelte-plain" title="Svelte" />
                     <TechIcon icon="react-original" title="React Native" />
                     <TechIcon icon="tailwindcss-plain" title="TailwindCSS" />
-                    <TechIcon image="/vite.svg" title="Vite" color="#778aff" />
+                    <TechIcon image="/icons/vite.svg" title="Vite" color="#778aff" />
                 </div>
 
                 <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 mb-6">
                     <TechIcon icon="nodejs-plain" title="Node" />
-                    <TechIcon image="/bun.svg" title="Bun" color="#fbf0df" />
+                    <TechIcon image="/icons/bun.svg" title="Bun" color="#fbf0df" />
                     <TechIcon icon="express-original" title="Express" color="#d5d5d5" />
-                    <TechIcon image="/trpc.svg" title="tRPC" color="#398ccb" />
-                    <TechIcon image="/prisma.svg" title="Prisma" color="#00BFA5" />
+                    <TechIcon image="/icons/trpc.svg" title="tRPC" color="#398ccb" />
+                    <TechIcon image="/icons/prisma.svg" title="Prisma" color="#00BFA5" />
                 </div>
 
                 <div class="grid grid-cols-2 xl:grid-cols-3 gap-2">
                     <TechIcon icon="vscode-plain" title="VS Code" />
                     <TechIcon icon="github-original" title="Github" color="#ffffff" />
                     <TechIcon icon="typescript-plain" title="Typescript" />
-                    <TechIcon image="/pnpm.svg" title="PNPM" color="#f9ad00" />
+                    <TechIcon image="/icons/pnpm.svg" title="PNPM" color="#f9ad00" />
                 </div>
-            </Card>
-
-            <Card title="Test" icon="ZoomOutIcon" delay={400}>
-                <p>test</p>
             </Card>
         </div>
 
@@ -96,7 +95,7 @@
                 <Project
                     href="https://snacr.vercel.app/"
                     github="https://github.com/HannesDahlvik/snacr"
-                    image="/snacr.jpg"
+                    image="/images/snacr.jpg"
                     name="Snacr"
                     description="An open srouce reddit type app."
                 >
@@ -104,8 +103,8 @@
                         <i class="devicon-nextjs-original" />
                         <i class="devicon-react-original colored" />
                         <i class="devicon-typescript-plain colored" />
-                        <img src="/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
-                        <img src="/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
+                        <img src="/icons/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
+                        <img src="/icons/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
                         <i class="devicon-postgresql-plain colored" />
                     </svelte:fragment>
                 </Project>
@@ -113,15 +112,15 @@
                 <Project
                     href="https://zodive.vercel.app/"
                     github="https://github.com/HannesDahlvik/zodive"
-                    image="/zodive.jpg"
+                    image="/images/zodive.jpg"
                     name="Zodive"
                     description="An open source finance tracker."
                 >
                     <svelte:fragment slot="technologies">
                         <i class="devicon-nextjs-original" />
                         <i class="devicon-typescript-plain colored" />
-                        <img src="/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
-                        <img src="/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
+                        <img src="/icons/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
+                        <img src="/icons/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
                         <i class="devicon-postgresql-plain colored" />
                     </svelte:fragment>
                 </Project>
@@ -130,7 +129,7 @@
                     wip
                     href="https://github.com/HannesDahlvik/create-nelt-app"
                     github="https://github.com/HannesDahlvik/create-nelt-app"
-                    image="/create-nelt-app.jpg"
+                    image="/images/create-nelt-app.jpg"
                     name="Create NELT App"
                     description="A CLI tool to bootstrap a project with NextJS, Expo, Lucia (auth) & tRPC "
                 >
