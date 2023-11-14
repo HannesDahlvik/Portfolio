@@ -7,7 +7,7 @@
         "dev": "vite dev",
         "build": "vite build",
         "preview": "vite preview",
-        "publish": "bun run ./scripts/publish.js"
+        "deploy": "vite build && echo hannesdahlvik.fi > ./build/CNAME && gh-pages -d build -b build -t true"
     },
     "dependencies": {
         "devicon": "^2.15.1",
