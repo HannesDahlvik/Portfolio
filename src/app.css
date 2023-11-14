@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: 20, 18, 20;
+    --foreground: 255, 255, 255;
+
+    --primary: 138, 70, 210;
+    --primary-foreground: 255, 255, 255;
+
+    --secondary: 46, 93, 228;
+    --secondary-foreground: 255, 255, 255;
+
+    --muted: 70, 70, 70;
+    --muted-foreground: 200, 200, 200;
+}
+
+body {
+    background-image: url('/background.png');
+    background-repeat: no-repeat;
+    background-position: top;
+}
