@@ -8,7 +8,7 @@
 </script>
 
 <div
-    class="relative bg-black/10 backdrop-blur-xl border border-muted rounded-xl p-6"
+    class="relative bg-black/10 backdrop-blur-sm border border-muted rounded-xl p-6"
     transition:fade={{ delay }}
 >
     <div class="inline-flex gap-2 bg-black/20 border border-muted rounded-full py-1.5 px-3">

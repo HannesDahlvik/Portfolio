@@ -10,11 +10,12 @@
 
 <svelte:head>
     <title>Hannes Dahlvik - Portfolio</title>
+    <meta name="description" content="Web developer currently based in Vaasa, Finland." />
 </svelte:head>
 
 <Meteors />
 
-<div class="w-11/12 sm:w-9/12 lg:w-8/12 pt-44 pb-4 sm:py-44">
+<div class="w-11/12 sm:w-9/12 lg:w-8/12 pt-44 pb-4 sm:py-44 z-30">
     <div
         class="flex flex-col items-center sm:items-start mb-32 text-center sm:text-left"
         transition:fade={{
@@ -57,9 +58,9 @@
     </div>
 
     <div class="grid gap-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
             <Card title="Technologies" icon="Wrench" delay={250} class="mt-2">
-                <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 mb-6">
+                <div class="grid grid-cols-2 2xl:grid-cols-3 gap-2 mb-6">
                     <TechIcon icon="react-original" title="React" />
                     <TechIcon icon="nextjs-original" title="NextJS" color="#ffffff" />
                     <TechIcon icon="svelte-plain" title="Svelte" />
@@ -68,7 +69,7 @@
                     <TechIcon image="/icons/vite.svg" title="Vite" color="#778aff" />
                 </div>
 
-                <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 mb-6">
+                <div class="grid grid-cols-2 2xl:grid-cols-3 gap-2 mb-6">
                     <TechIcon icon="nodejs-plain" title="Node" />
                     <TechIcon image="/icons/bun.svg" title="Bun" color="#fbf0df" />
                     <TechIcon icon="express-original" title="Express" color="#d5d5d5" />
@@ -76,7 +77,7 @@
                     <TechIcon image="/icons/prisma.svg" title="Prisma" color="#00BFA5" />
                 </div>
 
-                <div class="grid grid-cols-2 xl:grid-cols-3 gap-2">
+                <div class="grid grid-cols-2 2xl:grid-cols-3 gap-2">
                     <TechIcon icon="vscode-plain" title="VS Code" />
                     <TechIcon icon="github-original" title="Github" color="#ffffff" />
                     <TechIcon icon="typescript-plain" title="Typescript" />
@@ -85,59 +86,57 @@
             </Card>
         </div>
 
-        <div transition:fade={{ delay: 600 }}>
-            <Card
-                icon="Presentation"
-                title="Projects"
-                delay={500}
-                class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4"
+        <Card
+            icon="Presentation"
+            title="Projects"
+            delay={600}
+            class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4"
+        >
+            <Project
+                href="https://snacr.vercel.app/"
+                github="https://github.com/HannesDahlvik/snacr"
+                image="/images/snacr.jpg"
+                name="Snacr"
+                description="An open srouce reddit type app."
             >
-                <Project
-                    href="https://snacr.vercel.app/"
-                    github="https://github.com/HannesDahlvik/snacr"
-                    image="/images/snacr.jpg"
-                    name="Snacr"
-                    description="An open srouce reddit type app."
-                >
-                    <svelte:fragment slot="technologies">
-                        <i class="devicon-nextjs-original" />
-                        <i class="devicon-react-original colored" />
-                        <i class="devicon-typescript-plain colored" />
-                        <img src="/icons/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
-                        <img src="/icons/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
-                        <i class="devicon-postgresql-plain colored" />
-                    </svelte:fragment>
-                </Project>
+                <svelte:fragment slot="technologies">
+                    <i class="devicon-nextjs-original" />
+                    <i class="devicon-react-original colored" />
+                    <i class="devicon-typescript-plain colored" />
+                    <img src="/icons/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
+                    <img src="/icons/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
+                    <i class="devicon-postgresql-plain colored" />
+                </svelte:fragment>
+            </Project>
 
-                <Project
-                    href="https://zodive.vercel.app/"
-                    github="https://github.com/HannesDahlvik/zodive"
-                    image="/images/zodive.jpg"
-                    name="Zodive"
-                    description="An open source finance tracker."
-                >
-                    <svelte:fragment slot="technologies">
-                        <i class="devicon-nextjs-original" />
-                        <i class="devicon-typescript-plain colored" />
-                        <img src="/icons/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
-                        <img src="/icons/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
-                        <i class="devicon-postgresql-plain colored" />
-                    </svelte:fragment>
-                </Project>
+            <Project
+                href="https://zodive.vercel.app/"
+                github="https://github.com/HannesDahlvik/zodive"
+                image="/images/zodive.jpg"
+                name="Zodive"
+                description="An open source finance tracker."
+            >
+                <svelte:fragment slot="technologies">
+                    <i class="devicon-nextjs-original" />
+                    <i class="devicon-typescript-plain colored" />
+                    <img src="/icons/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
+                    <img src="/icons/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
+                    <i class="devicon-postgresql-plain colored" />
+                </svelte:fragment>
+            </Project>
 
-                <Project
-                    wip
-                    href="https://github.com/HannesDahlvik/create-nelt-app"
-                    github="https://github.com/HannesDahlvik/create-nelt-app"
-                    image="/images/create-nelt-app.jpg"
-                    name="Create NELT App"
-                    description="A CLI tool to bootstrap a project with NextJS, Expo, Lucia (auth) & tRPC "
-                >
-                    <svelte:fragment slot="technologies">
-                        <i class="devicon-typescript-plain colored" />
-                    </svelte:fragment></Project
-                >
-            </Card>
-        </div>
+            <Project
+                wip
+                href="https://github.com/HannesDahlvik/create-nelt-app"
+                github="https://github.com/HannesDahlvik/create-nelt-app"
+                image="/images/create-nelt-app.jpg"
+                name="Create NELT App"
+                description="A CLI tool to bootstrap a project with NextJS, Expo, Lucia (auth) & tRPC "
+            >
+                <svelte:fragment slot="technologies">
+                    <i class="devicon-typescript-plain colored" />
+                </svelte:fragment></Project
+            >
+        </Card>
     </div>
 </div>

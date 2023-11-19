@@ -21,6 +21,9 @@ export default {
                     DEFAULT: 'rgba(var(--muted))',
                     foreground: 'rgba(var(--muted-foreground))'
                 }
+            },
+            screens: {
+                '2xl': '1520px'
             }
         }
     },

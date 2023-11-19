@@ -35,5 +35,5 @@
         {/if}
     </div>
 
-    <p class="text-sm font-medium">{title}</p>
+    <p class="text-xs sm:text-sm font-medium">{title}</p>
 </div>
