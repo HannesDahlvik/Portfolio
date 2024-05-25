@@ -17,6 +17,13 @@ export default {
                     DEFAULT: 'rgba(var(--secondary))',
                     foreground: 'rgba(var(--secondary-foreground))'
                 },
+                ternary: {
+                    DEFAULT: 'rgba(var(--ternary))',
+                    foreground: 'rgba(var(--ternary-foreground))'
+                },
+                title: {
+                    DEFAULT: 'rgba(var(--title))'
+                },
                 muted: {
                     DEFAULT: 'rgba(var(--muted))',
                     foreground: 'rgba(var(--muted-foreground))'

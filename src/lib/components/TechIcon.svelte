@@ -1,6 +1,7 @@
 <script lang="ts">
     import icons from 'devicon/devicon.json'
     import { onMount } from 'svelte'
+    import Tooltip from './Tooltip.svelte'
 
     /**
      * https://devicon.dev/
@@ -23,17 +24,16 @@
     })
 </script>
 
-<div class="flex items-center gap-2 w-full bg-black/25 rounded-lg p-1 pr-2">
+<Tooltip>
+    <p slot="text">{title}</p>
+
     <div
-        class="flex justify-center items-center h-10 w-10 rounded-lg"
-        style="background-color: {color + '33'};"
+        class="flex justify-center items-center gap-2 h-14 w-14 xl:h-20 xl:w-20 bg-black/[15%] rounded-xl p-1"
     >
         {#if image}
-            <img src={image} alt={title} class="h-5 w-5" />
+            <img src={image} alt={title} class="h-5 w-5 xl:h-8 xl:w-8" />
         {:else}
-            <i class="devicon-{icon} text-xl" style="color: {color};" />
+            <i class="devicon-{icon} text-2xl xl:text-4xl" style="color: {color};" />
         {/if}
     </div>
-
-    <p class="text-xs sm:text-sm font-medium">{title}</p>
-</div>
+</Tooltip>

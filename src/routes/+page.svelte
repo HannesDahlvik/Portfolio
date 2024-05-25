@@ -1,11 +1,58 @@
 <script lang="ts">
+    import { onMount } from 'svelte'
     import { fade } from 'svelte/transition'
 
-    import { Github, Linkedin, Mail } from 'lucide-svelte'
-    import Card from '$lib/Card.svelte'
-    import TechIcon from '$lib/TechIcon.svelte'
-    import Project from '$lib/Project.svelte'
-    import Meteors from '$lib/Meteors.svelte'
+    import ProjectsWrapper from '$lib/sections/projects/ProjectsWrapper.svelte'
+
+    import Card from '$lib/components/Card.svelte'
+    import TechIcon from '$lib/components/TechIcon.svelte'
+    import { GithubIcon, LinkedinIcon, Mail } from 'lucide-svelte'
+
+    let showTitle = false
+
+    let blurOne: HTMLDivElement | null
+    let blurTwo: HTMLDivElement | null
+    let blurThree: HTMLDivElement | null
+
+    const MIN_HEIGHT = 320
+    const MAX_HEIGHT = 520
+    const MIN_WIDTH = 750
+    const MAX_WIDTH = 1000
+
+    onMount(() => {
+        showTitle = true
+
+        setInterval(() => {
+            if (blurOne && blurTwo && blurThree) {
+                blurOne.style.height = `${generateRandomHeight()}px`
+                blurOne.style.width = `${generateRandomWidth()}px`
+                blurOne.style.top = `${generateRandomTop()}px`
+
+                blurTwo.style.height = `${generateRandomHeight()}px`
+                blurTwo.style.width = `${generateRandomWidth()}px`
+                blurTwo.style.top = `${generateRandomTop()}px`
+
+                blurThree.style.height = `${generateRandomHeight()}px`
+                blurThree.style.width = `${generateRandomWidth()}px`
+                blurThree.style.top = `${generateRandomTop()}px`
+            }
+        }, 1000)
+    })
+
+    function generateRandomHeight() {
+        return Math.floor(Math.random() * (MAX_HEIGHT - MIN_HEIGHT) + MIN_HEIGHT)
+    }
+
+    function generateRandomWidth() {
+        return Math.floor(Math.random() * (MAX_WIDTH - MIN_WIDTH) + MIN_WIDTH)
+    }
+
+    function generateRandomTop() {
+        const scrollY = window.scrollY
+        const innerHeight = window.innerHeight
+        const random = Math.floor(Math.random() * 200)
+        return scrollY <= 200 ? random : innerHeight / 2 - random
+    }
 </script>
 
 <svelte:head>
@@ -13,130 +60,81 @@
     <meta name="description" content="Web developer currently based in Vaasa, Finland." />
 </svelte:head>
 
-<Meteors />
-
-<div class="w-11/12 sm:w-9/12 lg:w-8/12 pt-44 pb-4 sm:py-44 z-30">
+<div class="fixed top-0 grid grid-cols-3 w-full h-screen">
     <div
-        class="flex flex-col items-center sm:items-start mb-32 text-center sm:text-left"
-        transition:fade={{
-            duration: 600
-        }}
-    >
-        <h1 class="text-5xl font-bold">Hannes Dahlvik</h1>
+        bind:this={blurOne}
+        class="duration-1000 w-[750px] h-[320px] ease-linear bg-ternary blur-3xl rounded-full"
+    />
+    <div
+        bind:this={blurTwo}
+        class="duration-1000 w-[750px] h-[320px] ease-linear bg-secondary/20 blur-3xl rounded-full"
+    />
+    <div
+        bind:this={blurThree}
+        class="duration-1000 w-[750px] h-[320px] ease-linear bg-secondary/20 blur-3xl rounded-full"
+    />
+</div>
 
-        <p class="text-muted-foreground mt-2 text-xl">
-            Web developer currently based in Vaasa, Finland.
-        </p>
+<div
+    class="relative flex flex-col justify-center items-center h-[350px] lg:h-[576px] p-1 xl:px-48 text-center"
+>
+    {#if showTitle}
+        <h1 class="text-title duration-300" transition:fade>
+            Hi, I'm Hannes. <br />A web developer.
+        </h1>
 
-        <div class="mt-4 h-[2px] w-32 bg-primary" />
-
-        <div class="flex gap-4 mt-4 text-">
-            <a
-                class="text-muted-foreground/75 duration-300 hover:text-foreground"
-                href="https://github.com/HannesDahlvik"
-                target="_blank"
-            >
-                <Github class="text-3xl" />
+        <div
+            class="absolute bottom-20 flex items-center gap-4 duration-300"
+            transition:fade={{ delay: 500 }}
+        >
+            <a class="text-muted" href="https://github.com/hannesdahlvik" target="_blank">
+                <GithubIcon size={32} />
             </a>
 
             <a
-                class="text-muted-foreground/75 duration-300 hover:text-foreground"
+                class="text-muted"
                 href="https://www.linkedin.com/in/hannes-dahlvik-446958181/"
                 target="_blank"
             >
-                <Linkedin class="text-3xl" />
+                <LinkedinIcon size={32} />
             </a>
 
-            <a
-                class="text-muted-foreground/75 duration-300 hover:text-foreground"
-                href="mailto:hannes.dahlvik@gmail.com"
-                target="_blank"
-            >
-                <Mail class="text-3xl" />
+            <a class="text-muted" href="malti:hannes.dahlvik@gmail.com" target="_blank">
+                <Mail size={32} />
             </a>
         </div>
-    </div>
+    {/if}
+</div>
 
-    <div class="grid gap-6">
-        <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            <Card title="Technologies" icon="Wrench" delay={250} class="mt-2">
-                <div class="grid grid-cols-2 2xl:grid-cols-3 gap-2 mb-6">
-                    <TechIcon icon="react-original" title="React" />
-                    <TechIcon icon="nextjs-original" title="NextJS" color="#ffffff" />
-                    <TechIcon icon="svelte-plain" title="Svelte" />
-                    <TechIcon icon="react-original" title="React Native" />
-                    <TechIcon icon="tailwindcss-plain" title="TailwindCSS" />
-                    <TechIcon image="/icons/vite.svg" title="Vite" color="#778aff" />
-                </div>
+<div class="container mx-auto md:mt-40 px-8 pb-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 mb-10">
+        <Card class="flex flex-col items-center md:pt-8">
+            <h2>Tech & Tools</h2>
 
-                <div class="grid grid-cols-2 2xl:grid-cols-3 gap-2 mb-6">
-                    <TechIcon icon="nodejs-plain" title="Node" />
-                    <TechIcon image="/icons/bun.svg" title="Bun" color="#fbf0df" />
-                    <TechIcon icon="express-original" title="Express" color="#d5d5d5" />
-                    <TechIcon image="/icons/trpc.svg" title="tRPC" color="#398ccb" />
-                    <TechIcon image="/icons/prisma.svg" title="Prisma" color="#00BFA5" />
-                </div>
-
-                <div class="grid grid-cols-2 2xl:grid-cols-3 gap-2">
-                    <TechIcon icon="vscode-plain" title="VS Code" />
-                    <TechIcon icon="github-original" title="Github" color="#ffffff" />
-                    <TechIcon icon="typescript-plain" title="Typescript" />
-                    <TechIcon image="/icons/pnpm.svg" title="PNPM" color="#f9ad00" />
-                </div>
-            </Card>
-        </div>
-
-        <Card
-            icon="Presentation"
-            title="Projects"
-            delay={600}
-            class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4"
-        >
-            <Project
-                href="https://snacr.vercel.app/"
-                github="https://github.com/HannesDahlvik/snacr"
-                image="/images/snacr.jpg"
-                name="Snacr"
-                description="An open srouce reddit type app."
-            >
-                <svelte:fragment slot="technologies">
-                    <i class="devicon-nextjs-original" />
-                    <i class="devicon-react-original colored" />
-                    <i class="devicon-typescript-plain colored" />
-                    <img src="/icons/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
-                    <img src="/icons/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
-                    <i class="devicon-postgresql-plain colored" />
-                </svelte:fragment>
-            </Project>
-
-            <Project
-                href="https://zodive.vercel.app/"
-                github="https://github.com/HannesDahlvik/zodive"
-                image="/images/zodive.jpg"
-                name="Zodive"
-                description="An open source finance tracker."
-            >
-                <svelte:fragment slot="technologies">
-                    <i class="devicon-nextjs-original" />
-                    <i class="devicon-typescript-plain colored" />
-                    <img src="/icons/trpc.svg" alt="trpc.io logo" class="h-6 w-6" />
-                    <img src="/icons/prisma.svg" alt="prisma.io logo" class="h-6 w-6" />
-                    <i class="devicon-postgresql-plain colored" />
-                </svelte:fragment>
-            </Project>
-
-            <Project
-                wip
-                href="https://github.com/HannesDahlvik/create-nelt-app"
-                github="https://github.com/HannesDahlvik/create-nelt-app"
-                image="/images/create-nelt-app.jpg"
-                name="Create NELT App"
-                description="A CLI tool to bootstrap a project with NextJS, Expo, Lucia (auth) & tRPC "
-            >
-                <svelte:fragment slot="technologies">
-                    <i class="devicon-typescript-plain colored" />
-                </svelte:fragment></Project
-            >
+            <div class="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-4 gap-1 pt-4 md:p-8">
+                <TechIcon icon="react-original" title="React" />
+                <TechIcon icon="nextjs-plain" title="NextJS" color="#ffffff" />
+                <TechIcon icon="svelte-plain" title="Svelte" />
+                <TechIcon image="/icons/expo.svg" title="Expo" />
+                <TechIcon icon="tailwindcss-plain" title="TailwindCSS" />
+                <TechIcon image="/icons/trpc.svg" title="tRPC" color="#398ccb" />
+                <TechIcon icon="postgresql-plain" title="PostgreSQL" />
+                <TechIcon icon="mysql-original" title="MySQL" />
+                <TechIcon image="/icons/vite.svg" title="Vite" color="#778aff" />
+                <TechIcon icon="nodejs-plain" title="Node JS" />
+                <TechIcon image="/icons/bun.svg" title="Bun" color="#fbf0df" />
+                <TechIcon icon="vscode-plain" title="VS Code" />
+                <TechIcon icon="github-original" title="Github" color="#ffffff" />
+                <TechIcon icon="typescript-plain" title="Typescript" />
+                <TechIcon image="/icons/pnpm.svg" title="PNPM" color="#f9ad00" />
+                <TechIcon image="/icons/linux.svg" title="Linux" />
+            </div>
         </Card>
     </div>
+
+    <Card class="relative flex flex-col items-center w-full pt-8">
+        <h2>Projects</h2>
+
+        <ProjectsWrapper />
+    </Card>
 </div>
